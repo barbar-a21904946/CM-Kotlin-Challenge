@@ -64,7 +64,7 @@ class models {
         }
         fun venderVeiculo ( identificador: String, comprador : Pessoa){
 
-
+//se for necessrario vender verificar se esta a null ou seja vazio
                 val newVeiculo = veiculos[identificador]
                 if (newVeiculo != null) {
                     veiculos.remove(identificador)
@@ -99,20 +99,20 @@ class models {
             val current = LocalDateTime.now()
             val formatter = DateTimeFormatter.BASIC_ISO_DATE
             val formatted = current.format(formatter)
-
+            if(mes.removeRange(6,8).toInt() == dataDeNascimento.mes.toInt()){
+                if (mes.removeRange(4,6).toInt() > dataDeNascimento.dia.toInt()){
+                    carta = Carta()
+                }else{
+                    throw exceptions.MenorDeIdadeException()
+                }
+            }
             if (formatted.removeRange(4,8) .toInt() - dataDeNascimento.ano.toInt() == 18 ){
                 var mes = formatted.removeRange(0,4)
 
                 if(mes.removeRange(6,8).toInt() > dataDeNascimento.mes.toInt() ){
                     carta = Carta()
                 }
-                if(mes.removeRange(6,8).toInt() == dataDeNascimento.mes.toInt()){
-                    if (mes.removeRange(4,6).toInt() > dataDeNascimento.dia.toInt()){
-                        carta = Carta()
-                    }else{
-                        throw exceptions.MenorDeIdadeException()
-                    }
-                }
+
             }
             throw exceptions.MenorDeIdadeException()
 
