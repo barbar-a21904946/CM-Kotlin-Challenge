@@ -6,7 +6,15 @@ import java.util.*
 import kotlin.collections.HashMap
 class models {
 //represnta a classe dos models
+    data class Data(
+        var dia : String,
+        var mes : String,
+        var ano : String){
 
+        override fun toString(): String {
+            return "$dia-$mes-$ano"
+        }
+    }
     class Carta{
         var id : Int = 0
 
