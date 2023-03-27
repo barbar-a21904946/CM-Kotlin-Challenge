@@ -1,26 +1,27 @@
 package pt.ulusofona.cm.kotlin.challenge
-import com.example.appname.util.PersonA
+import pt.ulusofona.cm.kotlin.challenge.models.*
+import java.text.SimpleDateFormat
+import java.util.logging.SimpleFormatter
 
 fun main(){
-    var pessoa1 = models.Pessoa("joão", HashMap<String,models.Veiculo>() ,models.Data("01","02","22"),models.Carta(),models.Posicao(1,1))
-    var carro1 = models.Carro("carrinho1",models.Posicao(1,2),models.Data("13","02","2001"),models.Motor(170,1400,false))
-    var carro2 = models.Carro("carrinho2",models.Posicao(1,2),models.Data("08","03","2019"),models.Motor(170,1400,false))
-    pessoa1.comprarVeiculo(carro1)
-    pessoa1.comprarVeiculo(carro2)
+    //pequenos  exemplos de testes implementados
+    val f = SimpleDateFormat("dd-MM-yyyy")
 
-    pessoa1.comprarVeiculo(carro1)
-    pessoa1.comprarVeiculo(carro2)
-    pessoa1.comprarVeiculo(carro1)
-    pessoa1.comprarVeiculo(carro2)
+    var motor = Motor(1000,500)
+    val bicicleta = Bicicleta("Bicla")
+    var carro = Carro("KIT",motor)
+    var pessoa1 : Pessoa = Pessoa("Joana", f.parse("19-02-2001"))
+    var pessoa2 : Pessoa = Pessoa("Raquel", f.parse("15-11-2010"))
 
-    var motor = models.Motor(321,2900,false)
-    println(motor)
-    var bicicleta = models.Bicicleta("bicicleta",models.Posicao(2,3), models.Data("09","02","22"))
 
-    for (v in pessoa1.veiculos.values){
-        println(v)
-    }
 
+
+
+    //inserir elementos
+    pessoa2.comprarVeiculo(carro)
+    pessoa2.tirarCarta()
+    pessoa2.moverVeiculoPara("KIT",1,4)
+    pessoa2.moverVeiculoPara("KIT",1,4)
 
 
 
