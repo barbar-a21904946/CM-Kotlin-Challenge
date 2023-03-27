@@ -4,11 +4,12 @@ import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.HashMap
+package com.example.appname.util
 class models {
 //represnta a classe dos models
     data class Data(
         var dia : String,
-        var mes : String,
+        val mes : String,
         var ano : String){
 
         override fun toString(): String {

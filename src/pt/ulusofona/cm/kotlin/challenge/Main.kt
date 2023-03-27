@@ -1,6 +1,5 @@
 package pt.ulusofona.cm.kotlin.challenge
-
-import kotlin.collections.HashMap
+import com.example.appname.util.PersonA
 
 fun main(){
     var pessoa1 = models.Pessoa("joão", HashMap<String,models.Veiculo>() ,models.Data("01","02","22"),models.Carta(),models.Posicao(1,1))
